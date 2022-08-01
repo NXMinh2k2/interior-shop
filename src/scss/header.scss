@@ -1,0 +1,221 @@
+.header {
+    width: 100%;
+    height: 280px;
+    background-color: $mainColor;
+    color: #fff;
+    // position: fixed;
+    // z-index: 100;
+    
+    .header-top {
+        height: 45px;
+        width: 100%;
+        display: flex;
+        border-bottom: 1px solid #fff;
+
+        .header-top-text {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 300;
+
+            span {
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+
+        .header-top-list {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            font-size: 16px;
+
+            .header-top-item {
+                margin: 0 15px;
+                cursor: pointer;
+                
+                i {
+                    position: relative;
+                    font-size: 30px;
+                    
+                    .number-product {
+                        width: 22px;
+                        height: 22px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: -10px;
+                        left: 20px;
+
+                        span {
+                            color: #000;
+                            font-size: 12px;
+                            display: flex;
+                            justify-content: center;
+                            margin-top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .header-center {
+        height: 190px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .header-center-logo {
+            width: 30%;
+            display: flex;
+            justify-content: flex-end;
+
+            img {
+                width: 230px;
+                height: 120px;
+            }
+        }
+
+        .header-center-search {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+
+            .header-center-search-input {
+                width: 60%;
+                height: 50px;
+                overflow: hidden;
+                background-color: #fff;
+                border-radius: 8px;
+
+                input {
+                    padding: 0 16px;
+                    height: 100%;
+                    width: 90%;
+                    font-size: 16px;
+                    border: none;
+                    outline: none;
+
+                }
+
+                i {
+                    font-size: 24px;
+                    margin-left: 10px;
+                    color: #000;
+                }
+            }
+        }
+
+        .header-center-contact {
+            width: 30%;
+            display: flex;
+            justify-content: flex-start;
+
+            .header-center-contact-hotline {
+                i {
+                    font-size: 30px;
+                }
+
+                .hotline {
+                    font-size: 20px;
+                    font-weight: 300;
+                    margin-left: 20px;
+                }
+
+                .phone {
+                    font-size: 28px;
+                    font-weight: 400;
+                }
+            }
+
+           
+        }
+    }
+
+    .header-bottom {
+        height: 45px;
+        width: 100%;
+        background-color: $secondColor;
+        display: flex;
+
+        .header-bottom-list {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .header-bottom-item {
+                margin: 24px;
+                font-size: 18px;
+
+                &:hover{
+                    color: $hoverColor;
+                    border-bottom: 1px solid $hoverColor;
+                    cursor: pointer;
+                }
+
+                &:first-child {
+                    margin-left: 12%;
+                }
+                
+                .header-product-list {
+                    list-style: none;
+
+                    .header-product-item {
+                        padding: 10px 18px;
+                        margin: 10px 0;
+                        border-bottom: 1px solid #ccc;
+                        color: #fff;
+
+                        &:hover {
+                            color: #f6a548;
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+        .header-bottom-item-livingroom,
+        .header-bottom-item-bedroom,
+        .header-bottom-item-kitchen {
+            position: relative;
+
+            .header-product {
+                width: 260px;
+                height: 300px;
+                background-color: rgba(37,37,37,.65);
+                position: absolute;
+                top: 33px;
+                left: 0;
+                display: none;
+                border: 1px solid #fff;
+                border-top: none;
+                z-index: 99;
+
+                &::after {
+                    content: "";
+                    width: 120px;
+                    height: 50px;
+                    visibility: visible;
+                    position: absolute;
+                    top: -30px;
+                    left: 0;
+                }
+            }
+
+            &:hover .header-product {
+                display: block;
+            }
+        }
+    }
+}

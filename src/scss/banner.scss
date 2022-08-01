@@ -1,0 +1,49 @@
+.banner {
+    position: relative;
+
+    &:hover 
+    .prev {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:hover 
+    .next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.control-btn {
+    .next,
+    .prev {
+        position: absolute;
+        top: 40%;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        z-index: 100;
+        display: flex;
+        background-color: #666666;
+        outline: none;
+        border: none;
+        display: none;
+        cursor: pointer;
+
+        i {
+            font-size: 18px;
+            color: #fff;
+        }
+    }
+
+    .next {
+        right: 0;
+    }
+
+    .prev {
+        left: 0;
+    }
+     
+}

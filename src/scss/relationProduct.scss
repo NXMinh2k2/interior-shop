@@ -1,0 +1,104 @@
+.relation-products-wrap {
+    margin-top: 70px;
+    margin-bottom: 20px;
+    display: flex;
+
+    .project {
+        width: 390px;
+        margin-right: 30px;
+
+        .project-title {
+            font-size: 22px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .project-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 390px;
+            border-bottom: 1px dotted #ddd;
+            padding-bottom: 10px;
+
+            img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                margin: 15px 10px 10px 0;
+                cursor: pointer;
+
+            }
+            
+            span {
+                font-size: 18px;
+                font-weight: 300;
+                color: #333;
+                line-height: 1.6;
+                text-transform: uppercase;
+                cursor: pointer;
+
+            }
+        }
+
+        .project-des {
+            font-size: 20px;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #ddd;
+            line-height: 1.6;
+            font-weight: 300;
+            cursor: pointer;
+
+        }
+    }
+
+    .newsproduct {
+        width: 390px;
+        margin-right: 200px;
+
+        .newsproduct-title {
+            font-size: 22px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .newsproduct-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 390px;
+            border-bottom: 1px dotted #ddd;
+            padding-bottom: 10px;
+
+            img {
+                width: 100px;
+                height: 100px;
+                margin: 15px 10px 10px 0;
+                object-fit: cover;
+                cursor: pointer;
+
+            }
+            
+            span {
+                font-size: 18px;
+                font-weight: 300;
+                color: #333;
+                line-height: 1.6;
+                cursor: pointer;
+
+            }
+        }
+
+        .newsproduct-des {
+            font-size: 20px;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #ddd;
+            line-height: 1.6;
+            font-weight: 300;
+            cursor: pointer;
+
+        }
+    }
+}

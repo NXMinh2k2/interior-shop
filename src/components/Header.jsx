@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Logo from '../assets/images/logo.png'
 import {Link} from 'react-router-dom'
 import '../scss/index.scss'
 
 const Header = () => {
+
+    const [header, setHeader] = useState(false)
+
+    const handleChangeHeader = () => {
+        const scrollY = window.scrollY
+        if(scrollY > 120) {
+            setHeader(true)
+        } else {
+            setHeader(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleChangeHeader)
+
+        return () => {
+            window.removeEventListener('scroll', handleChangeHeader)
+        }
+    }, [])
+
   return (
     <div className='header'>
         <div className="header-top">
@@ -48,7 +68,7 @@ const Header = () => {
             </div>
         </div>
 
-        <div className="header-bottom">
+        <div className={header ? 'header-bottom scroll' : 'header-bottom'}>
             <div className="header-bottom-list ">
                 <div className="header-bottom-item header-bottom-item-livingroom">
                     <span className='header-bottom-item-text-livingroom'>Phòng khách</span>

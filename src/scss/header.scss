@@ -5,6 +5,7 @@
     color: #fff;
     // position: fixed;
     // z-index: 100;
+    // transform: translateY(-235px);
     
     .header-top {
         height: 45px;
@@ -146,6 +147,7 @@
         width: 100%;
         background-color: $secondColor;
         display: flex;
+        transition: 0.5s linear;
 
         .header-bottom-list {
             width: 100%;
@@ -218,4 +220,12 @@
             }
         }
     }
+}
+
+.scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100 !important;
+    height: 50px !important;
 }

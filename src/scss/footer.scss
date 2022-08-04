@@ -1,0 +1,184 @@
+.footer {
+    width: 100%;
+    height: 550px;
+    background-color: $mainColor;
+    color: #fff;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .footer-container {
+        width: 78%;
+        margin-top: 10px;
+        display: flex;
+       
+
+        .footer-info {
+            width: 25%;
+            margin: 0 20px;
+
+            .footer-title {
+                font-size: 22px;
+                font-weight: 300;
+
+            }
+            
+            .footer-img {
+                width: 340px;
+                margin-top: 26px;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .footer-like {
+                    position: absolute;
+                    bottom: 10%;
+                    left: 5%;
+                    width: 130px;
+                    height: 26px;
+                    background-color: #fff;
+                    padding: 0 10px;
+
+                    a {
+                        text-decoration: none;
+
+                        i {
+                            margin-right: 8px;
+                            font-size: 16px;
+                        }
+    
+                        span {
+                            line-height: 26px;
+                        }
+                    }
+                }
+
+                .footer-logo {
+                    position: absolute;
+                    top: 5%;
+                    left: 5%;
+                    display: flex;
+                    width: 322px;
+                    overflow: hidden;
+
+                }
+            }
+
+            .underline {
+                height: 4px;
+                width: 100%;
+                border: 1px solid #fff;
+                border-left: none;
+                border-right: none;
+                margin-top: 10px;
+            }
+
+            .footer-list {
+                list-style: none;
+                margin-top: 26px;
+
+                li {
+                    font-size: 20px;
+                    font-weight: 300;
+                    margin: 12px 0;
+                    line-height: 1.6;
+
+                    input {
+                        padding: 10px 8px;
+                        font-size: 18px;
+                        margin-right: 5px;
+                        outline: none;
+                        border: none;
+                    }
+
+                    button {
+                        height: 41px;
+                        padding: 12px;
+                        background-color: transparent;
+                        color: #fff;
+                        outline: none;
+                        border: 1px solid #fff;
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+        }
+
+        .social {
+            display: flex;
+            margin-top: 24px;
+
+            i {
+                color: #fff;
+                font-size: 24px;
+            }
+            
+            div {
+                margin-right: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+
+            .social-facebook {
+                width: 40px;
+                height: 40px;
+                background-color: #3b5998;
+            }
+            .social-twitter {
+                width: 40px;
+                height: 40px;
+                background-color: #1da1f2;
+            }
+            .social-pinterest {
+                width: 40px;
+                height: 40px;
+                background-color: #d02128;
+            }
+            .social-tumblr {
+                width: 40px;
+                height: 40px;
+                background-color: #001935;
+            }
+
+        }
+    }
+
+    .footer-contact {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 400px;
+        padding: 8px;
+        border-radius: 14px;
+        background-color: $secondColor;
+
+        i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .hotline {
+            font-size: 28px;
+            font-weight: 300;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .phone {
+            font-size: 28px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+       
+
+    }
+}

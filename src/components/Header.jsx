@@ -31,21 +31,21 @@ const Header = () => {
                 <span>THÁNG BÁN SOFA KHÔNG LÃI SUẤT - ƯU ĐÃ TỚI 4.500.000 Đ</span>
             </div>
             <ul className="header-top-list">
-                <li className="header-top-item">Trang chủ</li>
-                <li className="header-top-item">Giới thiệu</li>
-                <li className="header-top-item">Liên hệ</li>
-                <li className="header-top-item">Đăng ký</li>
-                <li className="header-top-item">Đăng nhập</li>
-                <li className="header-top-item">
-                    Giỏ hàng
-                </li>
-                <li className="header-top-item">
-                    <i class="fa-solid fa-cart-shopping">
+                <Link className='link' to='/'><li className="header-top-item">Trang chủ</li></Link>
+                <Link className='link' to='/'><li className="header-top-item">Giới thiệu</li></Link>
+                <Link className='link' to='/contact'><li className="header-top-item">Liên hệ</li></Link>
+                <Link className='link' to='/register'><li className="header-top-item">Đăng ký</li></Link>
+                <Link className='link' to='/login'><li className="header-top-item">Đăng nhập</li></Link>
+                <Link className='link' to='/cart'><li className="header-top-item">Giỏ hàng</li></Link>
+                <Link className='link' to='/cart'>
+                    <li className="header-top-item">
+                        <i class="fa-solid fa-cart-shopping">
                             <div className='number-product'>
                                 <span>1</span>
                             </div>
                         </i>
-                </li>
+                    </li>
+                </Link>
             </ul>
         </div>
 

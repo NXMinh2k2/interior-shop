@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../scss/index.scss'
+import { Link } from 'react-router-dom'
 import Mail from './Mail'
 import Map from './Map'
 
@@ -8,7 +9,7 @@ const Contact = () => {
     <div className='contact'>
         <div className="contact-wrap">
             <div className='contact-title'>
-                    <span>Trang chủ</span>
+                    <Link className='link' to='/'><span>Trang chủ</span></Link>
                     <span>Liên hệ</span>
             </div>
             <div className="contact-content">

@@ -4,18 +4,20 @@ import Home from './pages/Home/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Contact from './pages/Contact/Contact';
+import Register from './pages/Register/Register';
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
+      <Header />
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/contact' element={<Contact />}/>
+          <Route path='/register' element={<Register />}/>
         </Routes>
-      </BrowserRouter>
       <Footer />
+      </BrowserRouter>
     </div>
   );
 }

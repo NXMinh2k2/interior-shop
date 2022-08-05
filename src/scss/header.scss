@@ -222,6 +222,11 @@
     }
 }
 
+.link {
+    color: #fff;
+    text-decoration: none;
+}
+
 .scroll {
     position: fixed;
     top: 0;
@@ -229,3 +234,4 @@
     z-index: 100 !important;
     height: 50px !important;
 }
+

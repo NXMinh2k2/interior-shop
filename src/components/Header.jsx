@@ -1,9 +1,35 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, memo } from 'react'
 import Logo from '../assets/images/logo.png'
 import {Link} from 'react-router-dom'
 import '../scss/index.scss'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { useAuth } from '../firebase/config'
+import { getAuth, signOut } from 'firebase/auth'
+
+// import {useAuth} from '../pages/Register/Register' 
 
 const Header = () => {
+    const location = useLocation()
+    const currentUser = useAuth()
+    console.log(currentUser)
+
+    // const handleLogout = () => {
+    //     logout()
+    //     alert("Đăng xuất thành công")
+    // }
+
+    const auth = getAuth();
+
+    const navigate = useNavigate()
+    const handleLogout = () => {
+        signOut(auth).then(() => {
+            alert('Đăng xuất thành công')
+            navigate('/login')
+        // Sign-out successful.
+        }).catch((error) => {
+        // An error happened.
+        });
+    }
 
     const [header, setHeader] = useState(false)
 
@@ -31,11 +57,15 @@ const Header = () => {
                 <span>THÁNG BÁN SOFA KHÔNG LÃI SUẤT - ƯU ĐÃ TỚI 4.500.000 Đ</span>
             </div>
             <ul className="header-top-list">
+                <li>{currentUser && location.pathname == '/' ? currentUser.email : ''}</li>
                 <Link className='link' to='/'><li className="header-top-item">Trang chủ</li></Link>
                 <Link className='link' to='/'><li className="header-top-item">Giới thiệu</li></Link>
                 <Link className='link' to='/contact'><li className="header-top-item">Liên hệ</li></Link>
                 <Link className='link' to='/register'><li className="header-top-item">Đăng ký</li></Link>
-                <Link className='link' to='/login'><li className="header-top-item">Đăng nhập</li></Link>
+                {
+                    currentUser && location.pathname == '/' ?  (<li className="header-top-item" onClick={handleLogout}>Đăng xuất</li>) :
+                                    (<Link className='link' to='/login'><li className="header-top-item">Đăng nhập</li></Link>)
+                }
                 <Link className='link' to='/cart'><li className="header-top-item">Giỏ hàng</li></Link>
                 <Link className='link' to='/cart'>
                     <li className="header-top-item">
@@ -112,4 +142,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default memo(Header)

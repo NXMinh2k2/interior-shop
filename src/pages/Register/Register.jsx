@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../../scss/index.scss'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged } from "firebase/auth";
 import firbase from '../../firebase/config'
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 
 const Register = () => {
-
+    
     const formik = useFormik({
         initialValues: {
             name: "",
@@ -21,36 +21,28 @@ const Register = () => {
             password: Yup.string().required("Bắt buộc nhập").matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, "Mật khẩu ít nhất 8 kí tự, ít nhất 1 chữ cái, một số và 1 kí tự đặc biệt"),
             phone: Yup.string().required("Bắt buộc nhập").matches(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, "Không phải số điện thoại")
         }),
-        onSubmit: (values) => {
-            window.alert('Form Submited')
-        }
+        // onSubmit: (values) => {
+        //     window.alert('Form Submited')
+        // }
     })
 
     const email = formik.values.email
     const password = formik.values.password
-    
+
     const auth = getAuth();
-    const Singup = () => {
+    const signup = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
+            alert("Đăng ký thành công")
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
         });    
     }
-
-    const navigate = useNavigate()
     
-    onAuthStateChanged(auth, (user) => {
-        console.log(user)
-        if(user) {
-            navigate('/')
-        }
-    })
-
   return (
     <div className='register'>
         <div className="register-wrap">
@@ -105,7 +97,7 @@ const Register = () => {
                         {
                             formik.errors.phone && <span>{formik.errors.phone}</span>
                         }
-                        <button onClick={Singup}>ĐĂNG KÝ</button>
+                        <button onClick={signup}>ĐĂNG KÝ</button>
                     </form>
                 </div>
             </div>

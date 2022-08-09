@@ -1,0 +1,130 @@
+.content {
+    background-color: $bgColor;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .products-wrap {
+        width: 80%;
+        height: 100%;
+
+        .products-wrap-top {
+            width: 100%;
+
+            .products-wrap-title {
+                width: 100%;
+                margin-top: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #ccc;
+
+                span {
+                    color: #000;
+                    padding: 0 10px;
+                                        
+                    &:first-child {
+                        border-right: 1px solid #000;
+                        font-weight: 700 !important;
+                        cursor: pointer !important;
+                    }
+
+                    &:last-child {
+                        font-weight: 300;
+                        cursor: text;
+                    }
+
+                }
+            }
+
+            .products-wrap-filter {
+                width: 60%;
+                margin-top: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .search {
+                    width: 380px;
+                    height: 50px;
+                    background-color: #fff;
+                    padding: 10px;
+
+                    input {
+                        width: 90%;
+                        height: 100%;
+                        padding: 0 20px;
+                        border: none;
+                        outline: none;
+                        font-size: 18px;
+                    }
+
+                    i {
+                        cursor: pointer;
+                        font-size: 18px;
+                    }
+                }
+
+                .sort {
+                    width: 420px;
+                    height: 50px;
+
+                    .sort-wrap {
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        width: 100%;
+
+                        span {
+                            font-size: 20px;
+                            margin-right: 10px;
+                        }
+
+                        select {
+                            width: 250px;
+                            height: 100%;
+                            padding: 0 20px;
+                            margin-left: 10px;
+                            font-size: 18px;
+                            border: none;
+                            outline: none;
+                    }
+
+                    }
+                }
+            }
+        }
+
+        .livingroom-page {
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 100px;
+
+            .underline {
+                height: 1px;
+                width: 100%;
+                border: 1px solid #ccc;
+                margin-top: 6px;
+            }
+
+            .products-wrap-text {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            
+                .products-text {
+                    font-size: 24px;
+                    text-transform: uppercase;
+                }
+            
+            }
+            
+            .cart-product-wrap {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-column-gap: 36px;
+                grid-row-gap: 36px;
+            }
+        }
+
+    }
+}

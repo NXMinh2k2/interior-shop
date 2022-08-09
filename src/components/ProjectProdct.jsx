@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const ProjectProduct = () => {
 
@@ -22,11 +23,15 @@ const ProjectProduct = () => {
                 projects.slice(0,1).map((project, index) => {
                     return (
                         <div className='project' key={index}>
-                            <p className='project-title'>Dự án tiêu biểu</p>
-                            <div className="project-wrap">
-                                <img src={project.img}/>
-                                <span>{project.title}</span>
-                            </div>
+                           <Link className='link' to='/project'>
+                                <p className='project-title'>Dự án tiêu biểu</p>
+                           </Link>
+                            <Link className='link' to='/productpage'>
+                                <div className="project-wrap">
+                                    <img src={project.img}/>
+                                    <span>{project.title}</span>
+                                </div>
+                            </Link>    
                             <div className='project-des'>
                                 {project.name}
                             </div>

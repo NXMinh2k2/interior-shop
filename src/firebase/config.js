@@ -33,17 +33,14 @@ const analytics = getAnalytics(app);
     const [currentUser, setCurrentUser] = useState()
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if(user) {
-                navigate('/')
-                setCurrentUser(user)
-            }
-        })
+      onAuthStateChanged(auth, (user) => {
+          if(user) {
+            navigate('/')
+            setCurrentUser(user)
+          } else {
+            setCurrentUser()
+          }
+      })
     }, [])
-
     return currentUser
   }
-
-  // export const logout = () => {
-  //   signOut(auth)
-  // }

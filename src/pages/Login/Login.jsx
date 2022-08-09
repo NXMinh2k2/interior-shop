@@ -1,27 +1,38 @@
 import React, { useRef, useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import '../../scss/index.scss'
-import { GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { useAuth } from '../../firebase/config';
-
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
 const Login = () => {
-    const auth = getAuth()
+
+    const formik = useFormik({
+        initialValues: {
+            email: "",
+            password: "",
+
+        },
+        validationSchema: Yup.object({
+            email: Yup.string().required("Bắt buộc nhập").matches(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, "Email chưa đúng định dạng"),
+            password: Yup.string().required("Bắt buộc nhập").matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, "Mật khẩu ít nhất 8 kí tự, ít nhất 1 chữ cái, một số và 1 kí tự đặc biệt"),
+        }),
+        // onSubmit: (values) => {
+        //     window.alert('Form Submited')
+        // }
+    })
+
     useAuth()
-
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-    const emailRef = useRef("")
-    const passwordRef = useRef("")
-
-    console.log(email)
-    console.log(password)
-
+    
+    const email = formik.values.email
+    const password = formik.values.password
+    
+    const auth = getAuth()
     const handleLogin = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-
+            alert("Đăng nhập thành công")
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -72,6 +83,20 @@ const Login = () => {
             // ...
         })
     }
+
+    const handleForgotPassword = () => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                // Password reset email sent!
+                // ..
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+        });
+    }
+
         
   return (
     <div className='login'>
@@ -83,9 +108,29 @@ const Login = () => {
 
             <div className="login-content">
                 <div className="login-form">
-                    <form action="">
-                        <input type="text" placeholder='Email' onChange={(e) => setEmail(e.target.value)} ref={emailRef}/>
-                        <input type="text" placeholder='Mật khẩu' onChange={(e) => setPassword(e.target.value)} ref={passwordRef}/>
+                    <form onSubmit={formik.handleSubmit} action="">
+                        <input  
+                            type="email" 
+                            placeholder='Email'
+                            id='email'
+                            name='email'
+                            value={formik.values.email} 
+                            onChange={formik.handleChange}
+                        />
+                        {
+                            formik.errors.name && <span>{formik.errors.name}</span>
+                        }
+                         <input 
+                            type="password" 
+                            placeholder='Mật khẩu'
+                            id='password'
+                            name='password'
+                            value={formik.values.password} 
+                            onChange={formik.handleChange}
+                            />
+                        {
+                            formik.errors.password && <span>{formik.errors.password}</span>
+                        }
                         <button onClick={handleLogin}>Đăng nhập</button>
                         <div className='login-popup'>
                             <div className='facebook' onClick={handleLoginWithFacebook}>
@@ -97,7 +142,7 @@ const Login = () => {
                                 <span>Google</span>
                             </div>
                         </div>
-                        <div className='forgot-password'>
+                        <div className='forgot-password' onClick={handleForgotPassword}>
                             <span>Quên mật khẩu</span>
                             <i class="fa-solid fa-question"></i>
                         </div>

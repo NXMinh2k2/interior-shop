@@ -12,6 +12,7 @@
         width: 100%;
         display: flex;
         border-bottom: 1px solid #fff;
+        position: relative;
 
         .header-top-text {
             width: 50%;
@@ -35,6 +36,12 @@
             justify-content: center;
             list-style: none;
             font-size: 16px;
+
+            .cart-hover {
+                &:hover .view-cart {
+                    display: block;
+                }
+            }
 
             .header-top-item {
                 margin: 0 15px;
@@ -158,8 +165,9 @@
             .header-bottom-item {
                 margin: 24px;
                 font-size: 18px;
+                cursor: pointer;
 
-                &:hover{
+                &:hover span{
                     color: $hoverColor;
                     border-bottom: 1px solid $hoverColor;
                     cursor: pointer;
@@ -177,6 +185,10 @@
                         margin: 10px 0;
                         border-bottom: 1px solid #ccc;
                         color: #fff;
+
+                        span {
+
+                        }
 
                         &:hover {
                             color: #f6a548;
@@ -207,11 +219,12 @@
                 &::after {
                     content: "";
                     width: 120px;
-                    height: 50px;
+                    height: 10px;
                     visibility: visible;
                     position: absolute;
-                    top: -30px;
+                    top: -9px;
                     left: 0;
+                    z-index: 0;
                 }
             }
 

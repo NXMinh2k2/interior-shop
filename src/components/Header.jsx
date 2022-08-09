@@ -5,22 +5,15 @@ import '../scss/index.scss'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../firebase/config'
 import { getAuth, signOut } from 'firebase/auth'
-
-// import {useAuth} from '../pages/Register/Register' 
+import ViewCart from './ViewCart'
 
 const Header = () => {
     const location = useLocation()
+    const navigate = useNavigate()
     const currentUser = useAuth()
     console.log(currentUser)
 
-    // const handleLogout = () => {
-    //     logout()
-    //     alert("Đăng xuất thành công")
-    // }
-
     const auth = getAuth();
-
-    const navigate = useNavigate()
     const handleLogout = () => {
         signOut(auth).then(() => {
             alert('Đăng xuất thành công')
@@ -53,6 +46,7 @@ const Header = () => {
   return (
     <div className='header'>
         <div className="header-top">
+            <ViewCart />
             <div className="header-top-text">
                 <span>THÁNG BÁN SOFA KHÔNG LÃI SUẤT - ƯU ĐÃ TỚI 4.500.000 Đ</span>
             </div>
@@ -66,9 +60,9 @@ const Header = () => {
                     currentUser && location.pathname == '/' ?  (<li className="header-top-item" onClick={handleLogout}>Đăng xuất</li>) :
                                     (<Link className='link' to='/login'><li className="header-top-item">Đăng nhập</li></Link>)
                 }
-                <Link className='link' to='/cart'><li className="header-top-item">Giỏ hàng</li></Link>
+                <Link className='link' to='/cart'><li className="cart-hover header-top-item">Giỏ hàng</li></Link>
                 <Link className='link' to='/cart'>
-                    <li className="header-top-item">
+                    <li className="cart-hover header-top-item">
                         <i class="fa-solid fa-cart-shopping">
                             <div className='number-product'>
                                 <span>1</span>
@@ -101,7 +95,7 @@ const Header = () => {
         <div className={header ? 'header-bottom scroll' : 'header-bottom'}>
             <div className="header-bottom-list ">
                 <div className="header-bottom-item header-bottom-item-livingroom">
-                    <span className='header-bottom-item-text-livingroom'>Phòng khách</span>
+                    <Link className='link' to='/livingroom'><span className='header-bottom-item-text-livingroom'>Phòng khách</span></Link>
                     <div className='header-product'>
                         <ul className='header-product-list'>
                             <li className='header-product-item'>Sofa gỗ phòng khách</li>
@@ -111,7 +105,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="header-bottom-item header-bottom-item-bedroom">
-                    <span className='header-bottom-item-text-bedroom'>Phòng ngủ</span>
+                    <Link className='link' to='/bedroom'><span className='header-bottom-item-text-bedroom'>Phòng ngủ</span></Link>
                     <div className='header-product'>
                         <ul className='header-product-list'>
                             <li className='header-product-item'>Giường</li>
@@ -121,7 +115,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="header-bottom-item header-bottom-item-kitchen">
-                    <span className='header-bottom-item-text-kitchen'>Phòng bếp</span>
+                    <Link className='link' to='/kitchen'><span className='header-bottom-item-text-kitchen'>Phòng bếp</span></Link>
                     <div className='header-product'>
                         <ul className='header-product-list'>
                             <li className='header-product-item'>Bàn ăn</li>
@@ -131,10 +125,10 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="header-bottom-item">
-                   <span>Dự án tiêu biểu</span>
+                   <Link className='link' to='/project'><span>Dự án tiêu biểu</span></Link>
                 </div>
                 <div className="header-bottom-item">
-                    <span>Tin tức</span>
+                <Link className='link' to='/news'><span>Tin tức</span></Link>
                 </div>
             </div>
         </div>

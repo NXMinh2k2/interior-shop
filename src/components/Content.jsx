@@ -5,7 +5,7 @@ import LivingRoomProduct from './LivingRoomProduct'
 import RelationProduct from './RelationProduct'
 import TitleProduct from './TitleProduct'
 
-const Products = () => {
+const Content = () => {
   return (
     <div className="content">
         <div className='products-wrap'>
@@ -19,4 +19,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Content

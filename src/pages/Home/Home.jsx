@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Banner from '../../components/Banner'
-import Header from '../../components/Header'
-import Products from '../../components/Products'
+import Content from '../../components/Content'
 
 const Home = () => {
+
   return (
     <div>
       <Banner />
-      <Products />
+      <Content />
     </div>
   )
 }

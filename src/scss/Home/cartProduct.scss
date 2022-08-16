@@ -8,13 +8,17 @@
         border: 1px solid #ccc;
         position: relative;
 
+        &:hover .view-product {
+            display: block;
+        }
+
         .view-product {
             position: absolute;
             top: 30%;
             left: 33%;
             width: 124px;
             height: 35px;
-            display: block;
+            display: none;
 
             button {
                 width: 100%;
@@ -26,17 +30,12 @@
         }
 
 
-        img {
+        .product-image {
             width: 98%;
             height: 70%;
             display: flex;
             margin: 2px auto;
             object-fit: cover;
-
-            // &:hover 
-            // .view-product {
-            //     display: block;
-            // }
 
             &:hover {
                 opacity: 0.6;
@@ -47,10 +46,15 @@
         }
 
         .product-title {
-            margin-top: 20px;
             font-size: 22px;
             font-weight: 300;
+            margin-top: 20px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
             text-align: center;
+            color: #000;
 
             &:hover {
                 color: #888;
@@ -62,11 +66,11 @@
             display: flex;
             justify-content: center;
             align-items: baseline;
-            margin-top: 44px;
+            margin-top: 32px;
 
             .product-price-new {
                 font-size: 22px;
-                color: red;
+                color: #9e2334;
             }
 
             .product-price-old {

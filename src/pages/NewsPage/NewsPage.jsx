@@ -29,30 +29,30 @@ const NewsPage = () => {
 
           <div className="news-page">
             <div className="news-page-left">
-                {
-                  newsProducts.map((newsProduct, item) => {
-                    return (
-                      <div className='news-page-wrap' key={item}>
-                        <p className='news-page-order'>{newsProduct.order}:</p>
-                        <img className='news-page-img' src={newsProduct.img} alt="" />
-                        <p className='news-page-title'>{newsProduct.title}</p>
-                        <p className='news-page-des'>Tên dự án: {newsProduct.des}</p>
-                        
-                      </div>
-                    )
-                  })
-                }
+              {
+                newsProducts.map((newsProduct, item) => {
+                  return (
+                    <div className='news-page-wrap' key={item}>
+                      <p className='news-page-order'>{newsProduct.order}:</p>
+                      <img className='news-page-img' src={newsProduct.img} alt="" />
+                      <p className='news-page-title'>{newsProduct.title}</p>
+                      <p className='news-page-des'>Tên dự án: {newsProduct.des}</p>
+                      
+                    </div>
+                  )
+                })
+              }
             </div>
             <div className="news-page-right">
-                <div className="news-page-relation">
-                  <p>Bài viết mới</p>
-                  <ul>
-                    <li>Bí quyết trang trí bàn trà để tăng vẻ đẹp, sang trọng cho phòng khách</li>
-                    <li>Những mẫu thiết kế nội thất phòng khách hiện đại nhất năm 2018</li>
-                    <li>Thiết kế và thi công nội thất chung cư hiện đại (Anh Hà - Tân Mai)</li>
-                    <li>Thiết kế nội thất chung cư hiện đại The SunShine Place</li>
-                  </ul>
-                </div>
+              <div className="news-page-relation">
+                <p>Bài viết mới</p>
+                <ul>
+                  <li>Bí quyết trang trí bàn trà để tăng vẻ đẹp, sang trọng cho phòng khách</li>
+                  <li>Những mẫu thiết kế nội thất phòng khách hiện đại nhất năm 2018</li>
+                  <li>Thiết kế và thi công nội thất chung cư hiện đại (Anh Hà - Tân Mai)</li>
+                  <li>Thiết kế nội thất chung cư hiện đại The SunShine Place</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, memo } from 'react'
 import Logo from '../assets/images/logo.png'
 import {Link} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 import '../scss/index.scss'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../firebase/config'
@@ -11,16 +12,13 @@ const Header = () => {
     const location = useLocation()
     const navigate = useNavigate()
     const currentUser = useAuth()
-    console.log(currentUser)
 
     const auth = getAuth();
     const handleLogout = () => {
         signOut(auth).then(() => {
             alert('Đăng xuất thành công')
             navigate('/login')
-        // Sign-out successful.
         }).catch((error) => {
-        // An error happened.
         });
     }
 
@@ -35,6 +33,8 @@ const Header = () => {
         }
     }
 
+    const products = useSelector(state => state.product.addProductList)
+
     useEffect(() => {
         window.addEventListener('scroll', handleChangeHeader)
 
@@ -45,8 +45,8 @@ const Header = () => {
 
   return (
     <div className='header'>
+        <ViewCart />
         <div className="header-top">
-            <ViewCart />
             <div className="header-top-text">
                 <span>THÁNG BÁN SOFA KHÔNG LÃI SUẤT - ƯU ĐÃ TỚI 4.500.000 Đ</span>
             </div>
@@ -65,7 +65,7 @@ const Header = () => {
                     <li className="cart-hover header-top-item">
                         <i class="fa-solid fa-cart-shopping">
                             <div className='number-product'>
-                                <span>1</span>
+                                <span>{}</span>
                             </div>
                         </i>
                     </li>
@@ -98,9 +98,9 @@ const Header = () => {
                     <Link className='link' to='/livingroom'><span className='header-bottom-item-text-livingroom'>Phòng khách</span></Link>
                     <div className='header-product'>
                         <ul className='header-product-list'>
-                            <li className='header-product-item'>Sofa gỗ phòng khách</li>
-                            <li className='header-product-item'>Kệ Ti Vi</li>
-                            <li className='header-product-item'>Bàn nước</li>
+                            <Link className='link' to='sofa'><li className='header-product-item'>Sofa gỗ phòng khách</li></Link>
+                            <Link className='link' to='shelf'><li className='header-product-item'>Kệ Ti Vi</li></Link>
+                            <Link className='link' to='desk'><li className='header-product-item'>Bàn trà</li></Link>
                         </ul>
                     </div>
                 </div>
@@ -108,9 +108,9 @@ const Header = () => {
                     <Link className='link' to='/bedroom'><span className='header-bottom-item-text-bedroom'>Phòng ngủ</span></Link>
                     <div className='header-product'>
                         <ul className='header-product-list'>
-                            <li className='header-product-item'>Giường</li>
-                            <li className='header-product-item'>Tủ quần áo</li>
-                            <li className='header-product-item'>Bàn phấn</li>
+                            <Link className='link' to='bed'><li className='header-product-item'>Giường</li></Link>
+                            <Link className='link' to='cabinet'><li className='header-product-item'>Tủ quần áo</li></Link>
+                            <Link className='link' to='dressingtable'><li className='header-product-item'>Bàn phấn</li></Link>
                         </ul>
                     </div>
                 </div>
@@ -118,9 +118,9 @@ const Header = () => {
                     <Link className='link' to='/kitchen'><span className='header-bottom-item-text-kitchen'>Phòng bếp</span></Link>
                     <div className='header-product'>
                         <ul className='header-product-list'>
-                            <li className='header-product-item'>Bàn ăn</li>
-                            <li className='header-product-item'>Ghế bàn ăn</li>
-                            <li className='header-product-item'>Tủ bếp</li>
+                            <Link className='link' to='dinningtable'> <li className='header-product-item'>Bàn ăn</li></Link>
+                            <Link className='link' to='dinningchair'><li className='header-product-item'>Ghế bàn ăn</li></Link>
+                            <Link className='link' to='kitchencabinet'><li className='header-product-item'>Tủ bếp</li></Link>
                         </ul>
                     </div>
                 </div>

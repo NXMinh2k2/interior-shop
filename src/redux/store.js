@@ -3,7 +3,7 @@ import handleSlice from './handleSlice'
 
 const store = configureStore({
     reducer: {
-        products: handleSlice
+        product: handleSlice
     }
 })
 

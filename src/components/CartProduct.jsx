@@ -1,31 +1,53 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import '../scss/index.scss'
-import {addProducts} from '../redux/handleSlice'
+import {viewProducts, addProducts} from '../redux/handleSlice'
+import ViewProduct from './ViewProduct'
+import { Link } from 'react-router-dom'
 
 const CartProduct = (props) => {
   const  {id, name, img, code, status, price, oldPrice} = props
+  const [viewProduct, setViewProduct] = useState(false)
 
   const dispatch = useDispatch()
 
   const handleViewProduct = (product) => {
-      dispatch(addProducts(product))
+    dispatch(addProducts(product))
   }
 
+  const handleViewDetailProduct = (product) => {
+    dispatch(viewProducts(product))
+    setViewProduct(!viewProduct)
+  }
+
+  useEffect(() => {
+    if(viewProduct === true) {
+      document.body.style.overflow = 'hidden'
+    } else  {
+      document.body.style.overflow = 'unset';
+    }
+ }, [viewProduct])
 
   return (
-      <div className="cart-product-item">
-        <img src={img} alt="" className="product-image" />
-        <p className='product-title'>{name}</p>
-        <div className='product-price'>
-          <span className='product-price-new'>{price} VNĐ</span>
-          <span className='product-price-old'>{oldPrice &&  `${oldPrice} VNĐ`}</span>
-        </div>   
+      <>
+        {
+          viewProduct && <ViewProduct viewProduct={viewProduct} setViewProduct={setViewProduct}/>
+        }
+        <div className="cart-product-item">
+          <Link className="link" to={`/detailproductpage/${id}`}>
+            <img src={img} alt="" className="product-image" onClick={() => handleViewProduct({...props})}/>
+            <p className='product-title' onClick={() => handleViewProduct({...props})}>{name}</p>
+          </Link>
+          <div className='product-price'>
+            <span className='product-price-new'>{price} VNĐ</span>
+            <span className='product-price-old'>{oldPrice &&  `${oldPrice} VNĐ`}</span>
+          </div>   
 
-        <div className='view-product'>
-          <button onClick={() => handleViewProduct({...props})}>Xem nhanh</button>
-        </div> 
-      </div>
+          <div className='view-product'>
+            <button className='view-btn' onClick={() => handleViewDetailProduct({...props})}>Xem nhanh</button>
+          </div> 
+        </div>
+      </>
   )
 }
 

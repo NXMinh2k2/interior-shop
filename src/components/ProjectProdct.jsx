@@ -32,9 +32,11 @@ const ProjectProduct = () => {
                                     <span>{project.title}</span>
                                 </div>
                             </Link>    
-                            <div className='project-des'>
-                                {project.name}
-                            </div>
+                            <Link className='link' to='productpage2'>
+                                <div className='project-des'>
+                                    {project.name}
+                                </div>
+                            </Link>
                         </div>
                     )
                 })

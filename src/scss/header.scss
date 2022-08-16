@@ -3,9 +3,6 @@
     height: 280px;
     background-color: $mainColor;
     color: #fff;
-    // position: fixed;
-    // z-index: 100;
-    // transform: translateY(-235px);
     
     .header-top {
         height: 45px;
@@ -37,16 +34,10 @@
             list-style: none;
             font-size: 16px;
 
-            .cart-hover {
-                &:hover .view-cart {
-                    display: block;
-                }
-            }
-
             .header-top-item {
                 margin: 0 15px;
                 cursor: pointer;
-                
+
                 i {
                     position: relative;
                     font-size: 30px;
@@ -185,10 +176,6 @@
                         margin: 10px 0;
                         border-bottom: 1px solid #ccc;
                         color: #fff;
-
-                        span {
-
-                        }
 
                         &:hover {
                             color: #f6a548;

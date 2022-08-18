@@ -6,17 +6,17 @@ import ViewProduct from './ViewProduct'
 import { Link } from 'react-router-dom'
 
 const CartProduct = (props) => {
-  const  {id, name, img, code, status, price, oldPrice} = props
+  const  {id, name, img, code, status, price, oldPrice, discount} = props
   const [viewProduct, setViewProduct] = useState(false)
 
   const dispatch = useDispatch()
-
+  
   const handleViewProduct = (product) => {
     dispatch(addProducts(product))
   }
 
   const handleViewDetailProduct = (product) => {
-    dispatch(viewProducts(product))
+    dispatch(addProducts(product))
     setViewProduct(!viewProduct)
   }
 
@@ -46,6 +46,12 @@ const CartProduct = (props) => {
           <div className='view-product'>
             <button className='view-btn' onClick={() => handleViewDetailProduct({...props})}>Xem nhanh</button>
           </div> 
+          {
+            discount && 
+            <div className='discount'>
+              <span>-{discount}</span>
+            </div>
+          }
         </div>
       </>
   )

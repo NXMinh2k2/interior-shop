@@ -15,7 +15,7 @@ const SofaPage = () => {
             const res = await axios.get("http://localhost:3001/products")
             const data = res.data
 
-            const newProducts = data.filter(x => x.code.includes("BT"))
+            const newProducts = data.filter(x => x.code.includes("SF"))
             setSofaProducts(newProducts)
         }
         fetchData()

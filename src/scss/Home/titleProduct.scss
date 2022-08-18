@@ -8,6 +8,10 @@
         align-items: center;
         justify-content: center;
 
+        @include mobile {
+            justify-content: space-between;
+        }
+
         li {
             font-size: 28px;
             font-weight: 300;
@@ -17,6 +21,14 @@
             padding-right: 20px;
             text-transform: uppercase;
             cursor: pointer;
+
+            @include mobile {
+                margin-left: 0px;
+                border-right: none;
+                padding: 0;
+                font-size: 10px;
+                font-weight: 700;
+            }
 
 
             &:first-child::before {
@@ -29,6 +41,11 @@
                 width: 300px;
                 border-left: none;
                 border-right: none;
+
+                @include mobile {
+                    border: none;
+                    height: 0px;
+                }
             }
 
             &:last-child::after {
@@ -41,6 +58,11 @@
                 width: 300px;
                 border-left: none;
                 border-right: none;
+
+                @include mobile {
+                    border: none;
+                    height: 0px;
+                }
             }
 
 
@@ -55,5 +77,12 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-column-gap: 36px;
+
+        @include mobile {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-column-gap: 28px;
+            grid-row-gap: 28px;
+        }
     }
 }

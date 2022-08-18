@@ -4,18 +4,17 @@ import '../../scss/index.scss'
 import { Link, useParams } from 'react-router-dom'
 import { useDispatch,useSelector } from 'react-redux'
 import CartProduct from '../../components/CartProduct'
-import { addProducts, decreaseQuantity, addDetailProducts } from '../../redux/handleSlice'
+import { addProducts, decreaseQuantity, addDetailProducts, orderProduct } from '../../redux/handleSlice'
 
 const DetailProductPage = () => {
     const {id} = useParams()
     const detailProductList = useSelector((state) => state.product.addProductList)
     const detailProducts = detailProductList.filter(x => x.id == id)
     const detailProduct = detailProducts[0]
-    console.log(detailProduct)
 
     const dispatch = useDispatch()
-    const handleAddToCart = (detailProduct) => {
-        dispatch(addDetailProducts(detailProduct))
+    const handleAddToCart = () => {
+        dispatch(orderProduct())
     }
 
     const increaseProduct = (product) => {
@@ -70,7 +69,7 @@ const DetailProductPage = () => {
                             <span ><i class="fa-solid fa-plus" onClick={() => increaseProduct(detailProduct)}></i></span>
                         </div>
                        <Link className='link' to='/cart'>
-                        <div className="product-detail-button-cart" onClick={() => handleAddToCart(detailProduct)}>
+                            <div className="product-detail-button-cart" onClick={() => handleAddToCart()}>
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <span>Đặt hàng</span>
                             </div>

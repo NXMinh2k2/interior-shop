@@ -8,8 +8,32 @@
         border: 1px solid #ccc;
         position: relative;
 
+        @include mobile {
+            height: 400px;
+        }
+
         &:hover .view-product {
             display: block;
+        }
+
+        .discount {
+            position: absolute;     
+            top: 4%;
+            right: 4%;
+            color: #fff;
+            background-color: red ;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include mobile {
+                width: 40px;
+                height: 40px;
+                font-size: 12px;
+            }
         }
 
         .view-product {
@@ -60,6 +84,10 @@
                 color: #888;
                 cursor: pointer;
             }
+
+            @include mobile {
+                font-size: 18px;
+            }
         }
 
         .product-price {
@@ -71,12 +99,20 @@
             .product-price-new {
                 font-size: 22px;
                 color: #9e2334;
+
+                @include mobile {
+                    font-size: 18px;
+                }
             }
 
             .product-price-old {
                 font-size: 18px;
                 text-decoration: line-through;  
                 margin-left: 6px;  
+
+                @include mobile {
+                    font-size: 14px;
+                }
             }
         }
    }

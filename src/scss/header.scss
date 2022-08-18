@@ -3,13 +3,83 @@
     height: 280px;
     background-color: $mainColor;
     color: #fff;
-    
+
+    @include mobile {
+        height: 180px;
+        // position: fixed;
+        // top: 0;
+        // left: 0;
+        // right: 0;
+        // z-index: 100;
+    }
+
+    .header-overlay {
+        background: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 998;
+        visibility: hidden;
+        
+        .header-menu {
+            width: 70%;
+            height: 100%;
+            background-color: #554541;
+            transform: translateX(-100%);
+            transition: all ease-in 0.4s;
+
+            .header-menu-list {
+                width: 100%;
+                padding: 10px 20px;
+                list-style: none;
+
+                .header-menu-item {
+                    font-size: 15px;
+                    font-weight: 300;
+                    margin: 24px 0;
+                    padding-bottom: 4px;
+                    border-bottom: 1px solid #fff;
+
+                    .header-menu-item-wrap {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        i {
+                            font-size: 26px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .header-submenu-list {
+                        list-style: none;
+                        display: none;
+                        
+                        .header-submenu-item {
+                            font-size: 14px;
+                            font-weight: 300;
+                            margin: 10px 12px;
+                            padding: 4px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .header-top {
         height: 45px;
         width: 100%;
         display: flex;
         border-bottom: 1px solid #fff;
         position: relative;
+
+        @include mobile {
+            border-bottom: none;
+
+        }
 
         .header-top-text {
             width: 50%;
@@ -19,11 +89,16 @@
             font-size: 20px;
             font-weight: 300;
 
+            @include mobile {
+                width: 0;
+            }
+
             span {
                 @include mobile {
                     display: none;
                 }
             }
+
         }
 
         .header-top-list {
@@ -33,10 +108,15 @@
             justify-content: center;
             list-style: none;
             font-size: 16px;
+            
+            @include mobile {
+                width: 100%;
+                font-size: 12px;
+            }
 
+            
             .header-top-item {
                 margin: 0 15px;
-                cursor: pointer;
 
                 i {
                     position: relative;
@@ -63,39 +143,90 @@
                 }
 
             }
+            
+            .cart-hover {
+                @include mobile {
+                    display: none;
+                }
+            }
         }
     }
-
+    
     .header-center {
         height: 190px;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        
+        @include mobile {
+            height: 100px;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        .header-center-menu {
+            display: none;
+            
+            i {
+                font-size: 24px;
+            }
+
+            @include mobile{
+                width: 30%;
+                display: flex;
+                justify-content: flex-start;
+            }
+        }
 
         .header-center-logo {
             width: 30%;
             display: flex;
             justify-content: flex-end;
 
+            @include mobile {
+                order: 1;
+            }
+            
             img {
                 width: 230px;
                 height: 120px;
+                
+                @include mobile {
+                    width: 120px;
+                    height: 60px;
+                }
             }
         }
-
+        
         .header-center-search {
             width: 40%;
             display: flex;
             justify-content: center;
+            
+            @include mobile {
+                order: 3;
+                height: 36px;
+                width: 100%;
+                margin-top: 20px;
+            }
 
             .header-center-search-input {
-                width: 60%;
+                width: 52%;
                 height: 50px;
                 overflow: hidden;
                 background-color: #fff;
                 border-radius: 8px;
-
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                
+                @include mobile{
+                    width: 80%;
+                    height: 100%;
+                    background-color: #423331;
+                }
+                
                 input {
                     padding: 0 16px;
                     height: 100%;
@@ -103,43 +234,68 @@
                     font-size: 16px;
                     border: none;
                     outline: none;
-
+                    
+                    @include mobile {
+                        color: #fff;
+                        background-color: #423331;
+                    }
                 }
-
+                
                 i {
                     font-size: 24px;
                     margin-left: 10px;
                     color: #000;
+                    
+                    @include mobile {
+                        color: #fff;
+                    }
                 }
             }
         }
-
+        
         .header-center-contact {
             width: 30%;
             display: flex;
             justify-content: flex-start;
-
+            
+            @include mobile {
+                display: none;
+            }
+            
             .header-center-contact-hotline {
                 i {
                     font-size: 30px;
                 }
-
+                
                 .hotline {
                     font-size: 20px;
                     font-weight: 300;
                     margin-left: 20px;
                 }
-
+                
                 .phone {
                     font-size: 28px;
                     font-weight: 400;
                 }
             }
-
-           
+        }
+        
+        .header-center-cart {
+            display: none;
+            
+            i {
+                font-size: 24px;
+            }
+            
+            @include mobile {
+                display: flex;
+                justify-content: flex-end;
+                width: 30%;
+                order: 2;
+            }
         }
     }
-
+    
     .header-bottom {
         height: 45px;
         width: 100%;
@@ -147,30 +303,34 @@
         display: flex;
         transition: 0.5s linear;
 
+        @include mobile {
+            display: none;
+        }
+        
         .header-bottom-list {
             width: 100%;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-
+            
             .header-bottom-item {
                 margin: 24px;
                 font-size: 18px;
                 cursor: pointer;
-
+                
                 &:hover span{
                     color: $hoverColor;
                     border-bottom: 1px solid $hoverColor;
                     cursor: pointer;
                 }
-
+                
                 &:first-child {
                     margin-left: 12%;
                 }
                 
                 .header-product-list {
                     list-style: none;
-
+                    
                     .header-product-item {
                         padding: 10px 18px;
                         margin: 10px 0;
@@ -190,7 +350,7 @@
         .header-bottom-item-bedroom,
         .header-bottom-item-kitchen {
             position: relative;
-
+            
             .header-product {
                 width: 260px;
                 height: 300px;
@@ -202,7 +362,7 @@
                 border: 1px solid #fff;
                 border-top: none;
                 z-index: 99;
-
+                
                 &::after {
                     content: "";
                     width: 120px;
@@ -214,7 +374,7 @@
                     z-index: 0;
                 }
             }
-
+            
             &:hover .header-product {
                 display: block;
             }
@@ -235,3 +395,14 @@
     height: 50px !important;
 }
 
+.active-overlay {
+    visibility: visible !important
+}
+
+.active-menu {
+    transform: translateX(0) !important;
+}
+
+.active-submenu {
+    display: block !important;
+}

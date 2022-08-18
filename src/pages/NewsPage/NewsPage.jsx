@@ -47,10 +47,10 @@ const NewsPage = () => {
               <div className="news-page-relation">
                 <p>Bài viết mới</p>
                 <ul>
-                  <li>Bí quyết trang trí bàn trà để tăng vẻ đẹp, sang trọng cho phòng khách</li>
-                  <li>Những mẫu thiết kế nội thất phòng khách hiện đại nhất năm 2018</li>
-                  <li>Thiết kế và thi công nội thất chung cư hiện đại (Anh Hà - Tân Mai)</li>
-                  <li>Thiết kế nội thất chung cư hiện đại The SunShine Place</li>
+                  <Link className='link' to='/productpage3'><li>Bí quyết trang trí bàn trà để tăng vẻ đẹp, sang trọng cho phòng khách</li></Link>
+                  <Link className='link' to='/productpage4'><li>Những mẫu thiết kế nội thất phòng khách hiện đại nhất năm 2018</li></Link>
+                  <Link className='link' to='/productpage'><li>Thiết kế và thi công nội thất chung cư hiện đại (Anh Hà - Tân Mai)</li></Link>
+                  <Link className='link' to='/productpage2'><li>Thiết kế nội thất chung cư hiện đại The SunShine Place</li></Link>
                 </ul>
               </div>
             </div>

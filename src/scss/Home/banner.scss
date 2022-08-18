@@ -1,5 +1,15 @@
 .banner {
     position: relative;
+    
+    @include mobile {
+        height: 180px;
+    }
+
+    .banner-img {
+        @include mobile {
+            height: 180px;
+        }
+    }
 
     &:hover 
     .prev {

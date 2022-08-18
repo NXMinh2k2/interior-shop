@@ -43,6 +43,7 @@ const TitleProduct = () => {
                                         name={product.name}
                                         code={product.code}
                                         status={product.status}
+                                        discount={product.discount}
                                     />
                                 </div> 
                             )

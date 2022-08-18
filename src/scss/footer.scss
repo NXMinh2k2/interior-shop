@@ -8,21 +8,37 @@
     justify-content: center;
     align-items: center;
 
+    @include mobile {
+        height: 1400px;
+    }
+
 
     .footer-container {
         width: 78%;
         margin-top: 10px;
         display: flex;
+
+        @include mobile {
+            flex-direction: column;
+            height: 1400px;
+        }
        
 
         .footer-info {
             width: 25%;
             margin: 0 20px;
 
+            @include mobile {
+                width: 100%;
+                margin: 20px 0;
+            }
+
             .footer-title {
                 font-size: 22px;
-                font-weight: 300;
-
+                
+                @include mobile {
+                    font-size: 20px;
+                }
             }
             
             .footer-img {
@@ -88,12 +104,21 @@
                     margin: 12px 0;
                     line-height: 1.6;
 
+                    @include mobile {
+                        font-size: 16px;
+                        line-height: 1.8;
+                    }
+
                     input {
                         padding: 10px 8px;
                         font-size: 18px;
                         margin-right: 5px;
                         outline: none;
                         border: none;
+
+                        @include mobile {
+                            padding: 8px 6px;
+                        }
                     }
 
                     button {
@@ -104,6 +129,10 @@
                         outline: none;
                         border: 1px solid #fff;
                         cursor: pointer;
+
+                        @include mobile {
+                            height: 38px
+                        }
                     }
                 }
             }
@@ -160,9 +189,25 @@
         border-radius: 14px;
         background-color: $secondColor;
 
+        @include mobile {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 8px 24px;
+            background-color: rgba(39,21,16,.8);
+            border-radius: 0;
+            z-index: 1000;
+        }
+
         i {
             font-size: 30px;
             cursor: pointer;
+
+            @include mobile {
+                font-size: 24px;
+            }
         }
 
         .hotline {
@@ -170,15 +215,20 @@
             font-weight: 300;
             margin-left: 20px;
             cursor: pointer;
+
+            @include mobile {
+                font-size: 24px;
+            }
         }
 
         .phone {
             font-size: 28px;
             font-weight: 400;
             cursor: pointer;
+
+            @include mobile {
+                font-size: 24px;
+            }
         }
-
-       
-
     }
 }

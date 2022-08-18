@@ -46,7 +46,7 @@ const Footer = () => {
           <div className='footer-title'>Hỗ trợ khách hàng</div>
           <div className='underline'></div>
           <div className='footer-img'>
-            <img  src="https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/279455058_1996415153898594_3505548229932861994_n.png?stp=dst-png_p526x296&_nc_cat=102&ccb=1-7&_nc_sid=dd9801&_nc_ohc=4noZs9hDSvcAX9yMed0&_nc_ht=scontent.fhan5-2.fna&edm=ADwHzz8EAAAA&oh=00_AT_sRJg3mPGFXCDpYBbLLV3zzSLza2jlFmbpPFHk1bp_EA&oe=62EFDD4F" alt="" />
+            <img  src="https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/279455058_1996415153898594_3505548229932861994_n.png?stp=dst-png_p75x225&_nc_cat=102&ccb=1-7&_nc_sid=dd9801&_nc_ohc=Q_RSJY26swoAX_BLZXI&_nc_ht=scontent.fhan5-2.fna&edm=ADwHzz8EAAAA&oh=00_AT_k1tLBYb8BeSQwm-SmMNoeli5QP0iueYSIx_SHClNIJA&oe=6303A3CF" alt="" />
             <div className='footer-like'>
               <a href="https://www.facebook.com/nhanh.vn/" target="_blank"> 
                 <i class="fa-brands fa-square-facebook"></i>

@@ -43,9 +43,9 @@ const Banner = () => {
   return (
     <div className='banner'>
         <Slider {...settings}>
-            <img src={Banner1} alt="" />
-            <img src={Banner2} alt="" />
-            <img src={Banner3} alt="" />
+            <img className='banner-img' src={Banner1} alt="" />
+            <img className='banner-img' src={Banner2} alt="" />
+            <img className='banner-img' src={Banner3} alt="" />
         </Slider>
     </div>
   )

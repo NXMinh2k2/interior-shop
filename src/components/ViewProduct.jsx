@@ -2,20 +2,19 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import '../scss/index.scss'
-import { addProducts, addDetailProducts, decreaseQuantity} from '../redux/handleSlice'
+import { addProducts, addDetailProducts, decreaseQuantity, orderProduct} from '../redux/handleSlice'
 
 const ViewProduct = ({viewProduct, setViewProduct}) => {
 
     const products = useSelector((state) => state.product.addProductList)
-    console.log(products)
 
     const handleHideViewProduct = () => {
         setViewProduct(!viewProduct)
     }
 
     const dispatch = useDispatch()
-    const handleAddToCart = (product) => {
-        dispatch(addDetailProducts(product))
+    const handleAddToCart = () => {
+        dispatch(orderProduct())
     }
 
     const increaseProduct = (product) => {

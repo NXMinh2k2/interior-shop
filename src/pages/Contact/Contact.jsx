@@ -5,6 +5,7 @@ import Mail from './Mail'
 import Map from './Map'
 
 const Contact = () => {
+  const key = 'AIzaSyBMW9Fqw50i5YU-aLRcrNs0bhRCEYDDm6g'
   return (
     <div className='contact'>
         <div className="contact-wrap">
@@ -13,7 +14,12 @@ const Contact = () => {
                     <span>Liên hệ</span>
             </div>
             <div className="contact-content">
-            <Map />
+            <Map 
+              googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`}
+              loadingElement={<div style={{ height: `100%` }} />}
+              containerElement={<div style={{ height: `20vh`, margin: `auto`, border: '2px solid black' }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+            />
             <Mail />
             </div>
         </div>
@@ -22,7 +28,3 @@ const Contact = () => {
 }
 
 export default Contact
-// googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${'AIzaSyDz-V65JURbuUvXb-9lyK0rfffqeiJK5KM'}&callback=initMap`}
-// loadingElement={<div style={{ height: `100%` }} />}
-// containerElement={<div style={{ height: `90vh`, margin: `auto`, border: '2px solid black' }} />}
-// mapElement={<div style={{ height: `100%` }} />}

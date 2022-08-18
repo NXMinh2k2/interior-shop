@@ -1,21 +1,27 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
-import { addProducts, decreaseQuantity, deleteProduct } from '../../redux/handleSlice'
+import { increaseQuantityCart, decreaseQuantityCart, deleteProduct, showResultPrice } from '../../redux/handleSlice'
 import '../../scss/index.scss'  
-import { createContext } from 'react'
 
 const CartProductPage = () => {
+  const products = useSelector(state => state.product.checkoutProductList)
+  // const [productList, setProductList] = useState(() => {
+  //   const storageProduct = JSON.parse(localStorage.getItem('products'))
+  //   return storageProduct ?? products
+  // })
 
-  const products = useSelector(state => state.product.addProductList)
+  // useEffect(() => {
+  //   localStorage.setItem('products', JSON.stringify(products))
+  // }, [products])
 
   const dispatch = useDispatch()
   const increaseProduct = (product) => {
-    dispatch(addProducts(product))
+    dispatch(increaseQuantityCart(product))
   }
 
   const decreaseProduct = (product) => {
-    dispatch(decreaseQuantity(product))
+    dispatch(decreaseQuantityCart(product))
   } 
 
   const removeProduct = (product) => {
@@ -23,7 +29,6 @@ const CartProductPage = () => {
   }
 
   const resultPrice = products.reduce((price, item) => price + item.totalPrice , 0) 
-  const PriceContext = createContext()
 
   return (
       <div className="content">
@@ -81,7 +86,7 @@ const CartProductPage = () => {
                   <tr>
                     <td className='btn-wrap' colSpan="4">
                       <Link to='/'><button>Tiếp tục mua hàng</button></Link>
-                      <Link to='/checkout'><button>Thực hiện thanh toán</button></Link>
+                      <Link to='/checkout' ><button>Thực hiện thanh toán</button></Link>
                     </td>
                   </tr>
                 </table> 
@@ -91,10 +96,10 @@ const CartProductPage = () => {
                 <div className="cart-page-relation">
                   <p>Bài viết mới</p>
                   <ul>
-                    <li>Bí quyết trang trí bàn trà để tăng vẻ đẹp, sang trọng cho phòng khách</li>
-                    <li>Những mẫu thiết kế nội thất phòng khách hiện đại nhất năm 2018</li>
-                    <li>Thiết kế và thi công nội thất chung cư hiện đại (Anh Hà - Tân Mai)</li>
-                    <li>Thiết kế nội thất chung cư hiện đại The SunShine Place</li>
+                     <Link className='link' to='/productpage3'><li>Bí quyết trang trí bàn trà để tăng vẻ đẹp, sang trọng cho phòng khách</li></Link>
+                    <Link className='link' to='/productpage4'><li>Những mẫu thiết kế nội thất phòng khách hiện đại nhất năm 2018</li></Link>
+                    <Link className='link' to='/productpage'><li>Thiết kế và thi công nội thất chung cư hiện đại (Anh Hà - Tân Mai)</li></Link>
+                    <Link className='link' to='/productpage2'><li>Thiết kế nội thất chung cư hiện đại The SunShine Place</li></Link>
                   </ul>
                 </div>
               </div>
@@ -109,3 +114,4 @@ const CartProductPage = () => {
 }
 
 export default CartProductPage
+

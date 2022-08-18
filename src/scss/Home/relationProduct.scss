@@ -3,22 +3,34 @@
     margin-bottom: 20px;
     display: flex;
 
+    @include mobile {
+        flex-direction: column;
+    }
+
     .project {
         width: 390px;
         margin-right: 30px;
+
+        @include mobile {
+            width: 100%;
+        }
 
         .project-title {
             color: #000;
             font-size: 22px;
             text-transform: uppercase;
             cursor: pointer;
+
+            @include mobile {
+                font-size: 20px;
+            }
         }
 
         .project-wrap {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 390px;
+            width: 100%;
             border-bottom: 1px dotted #ddd;
             padding-bottom: 10px;
 
@@ -36,8 +48,12 @@
                 font-weight: 300;
                 color: #333;
                 line-height: 1.6;
-                text-transform: uppercase;
                 cursor: pointer;
+
+                @include mobile {
+                    font-size: 16px;
+                    margin-left: 10px;
+                }
 
             }
         }
@@ -51,7 +67,11 @@
             border-bottom: 1px dotted #ddd;
             line-height: 1.6;
             cursor: pointer;
+            text-transform: uppercase;
 
+            @include mobile {
+                font-size: 16px;
+            }
         }
     }
 
@@ -59,18 +79,27 @@
         width: 390px;
         margin-right: 200px;
 
+        @include mobile {
+            width: 100%;
+            margin-top: 28px;
+        }
+
         .newsproduct-title {
             color: #000;
             font-size: 22px;
             text-transform: uppercase;
             cursor: pointer;
+
+            @include mobile {
+                font-size: 20px;
+            }
         }
 
         .newsproduct-wrap {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 390px;
+            width: 100%;
             border-bottom: 1px dotted #ddd;
             padding-bottom: 10px;
 
@@ -90,6 +119,10 @@
                 line-height: 1.6;
                 cursor: pointer;
 
+                @include mobile {
+                    font-size: 16px;
+                    margin-left: 10px;
+                }
             }
         }
 
@@ -103,6 +136,9 @@
             line-height: 1.6;
             cursor: pointer;
 
+            @include mobile {
+                font-size: 16px;
+            }
         }
     }
 }

@@ -6,7 +6,9 @@ import '../../scss/index.scss'
 
 const CheckoutPage = () => {
 
-  const products = useSelector(state => state.product.addProductList)
+  const products = useSelector(state => state.product.checkoutProductList)
+
+  const resultPrice = products.reduce((price, item) => price + item.totalPrice , 0) 
 
   const dispatch = useDispatch()
   const removeProduct = (product) => {
@@ -114,7 +116,7 @@ const CheckoutPage = () => {
                   </div>
                   <div className='price-temporary'>
                     <span>TẠM TÍNH</span>
-                    <span>97,994,000</span>
+                    <span>{resultPrice && resultPrice}.000.000VNĐ</span>
                   </div>
                   <div className='fees-ship'>
                     <span>PHÍ VẬN CHUYỂN</span>
@@ -122,7 +124,7 @@ const CheckoutPage = () => {
                   </div>
                   <div className='price'>
                     <span>THÀNH TIỀN</span>
-                    <span>97,994,000</span>
+                    <span>{resultPrice && resultPrice}.000.000VNĐ</span>
                   </div>
                   <button>Thanh TOÁN</button>
                 </div>

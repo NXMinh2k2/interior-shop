@@ -7,7 +7,8 @@
         "oldPrice": "29.000.000",
         "img": "https://traffic-edge23.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/sf08_2_1000x667.jpg",
         "status": "discount",
-        "place": "phongkhach"
+        "place": "phongkhach",
+        "discount": "20%"
     },
     {
         "id": 2,
@@ -17,7 +18,8 @@
         "oldPrice": "35.000.000",
         "img": "https://traffic-edge17.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/sf08_1_thumb_600x400.jpg",
         "status": "discount",
-        "place": "phongkhach"
+        "place": "phongkhach",
+        "discount": "14%"
     },
     {
         "id": 3,
@@ -27,7 +29,8 @@
         "oldPrice": "32.000.000",
         "img": "https://traffic-edge57.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/sf07_lg_thumb_600x400.jpg",
         "status": "discount",
-        "place": "phongkhach"
+        "place": "phongkhach",
+        "discount": "12.5%"
     },
     {
         "id": 4,
@@ -37,7 +40,9 @@
         "oldPrice": "29.000.000",
         "img": "https://traffic-edge19.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/sf06_3_thumb_600x400.jpg",
         "status": "discount",
-        "place": "phongkhach"
+        "place": "phongkhach",
+        "discount": "13,8%"
+        
     },
     {
         "id": 5,

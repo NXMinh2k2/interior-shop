@@ -42,8 +42,16 @@
             width: 100%;
             display: flex;
 
+            @include mobile {
+                flex-direction: column;
+            }
+
             .project-page-left {
                 width: 70%;
+
+                @include mobile {
+                    width: 100%;
+                }
 
                 .project-page-wrap {
                     margin: 50px 0;
@@ -51,6 +59,10 @@
                     p {
                         font-size: 20px;
                         margin-top: 16px;
+                        
+                        @include mobile {
+                            font-size: 18px;
+                        }
                     }
 
                     .project-page-order {
@@ -59,8 +71,6 @@
                         text-transform: uppercase;
                         border-bottom: 1px solid #000;
                     }
-
-                    
 
                     .project-page-img {
                         width: 100%;
@@ -71,9 +81,17 @@
             .project-page-right {
                 width: 30%;
 
+                @include mobile {
+                    width: 100%;
+                }
+
                 .project-page-relation {
                     margin-top: 50px;
                     margin-left: 80px;
+
+                    @include mobile {
+                        margin-left: 0;
+                    }
 
                     p {
                         font-size: 24px;
@@ -81,10 +99,19 @@
                         margin-bottom: 20px;
                         text-transform: uppercase;
                         border-bottom: 1px solid #000;
+
+                        @include mobile {
+                            text-align: center;
+                            font-size: 20px;
+                        }
                     }
 
                     ul {
                         list-style: none;
+                        
+                        @include mobile {
+                            margin-bottom: 40px;
+                        }
 
                         li {
                             font-size: 24px;
@@ -97,6 +124,11 @@
                             &:hover {
                                 text-decoration: underline;
                                 opacity: 0.6;
+                            }
+
+                            @include mobile {
+                                font-size: 20px;
+                                line-height: 1.6;
                             }
                         }
                     }

@@ -60,7 +60,7 @@ const Header = () => {
                 <ul className='header-menu-list'>
                     <li className='header-menu-item'>
                         <div className='header-menu-item-wrap'>
-                        <Link className='link' to='/livingroom' onClick={() => setOpenMenu(!openMenu)} onClick={() => setOpenMenu(!openMenu)}><span>Phòng khách</span></Link>
+                            <Link className='link' to='/livingroom' onClick={() => setOpenMenu(!openMenu)}><span>Phòng khách</span></Link>
                             {
                                 openSubMenu1 ? <i class="fa-solid fa-circle-xmark"  onClick={() => setOpenSubMenu1(!openSubMenu1)}></i> : <i class="fa-solid fa-plus" onClick={() => setOpenSubMenu1(!openSubMenu1)}></i>
                             }
@@ -112,7 +112,7 @@ const Header = () => {
             <ul className="header-top-list">
                 <li>{currentUser && location.pathname == '/' ? currentUser.email : ''}</li>
                 <Link className='link' to='/'><li className="header-top-item">Trang chủ</li></Link>
-                <Link className='link' to='/'><li className="header-top-item">Giới thiệu</li></Link>
+                {/* <Link className='link' to='/'><li className="header-top-item">Giới thiệu</li></Link> */}
                 <Link className='link' to='/contact'><li className="header-top-item">Liên hệ</li></Link>
                 <Link className='link' to='/register'><li className="header-top-item">Đăng ký</li></Link>
                 {
@@ -137,7 +137,9 @@ const Header = () => {
                 <i class="fa-solid fa-bars" ></i>
             </div>
             <div className="header-center-logo">
-                <img src={Logo} alt="" />
+                <Link className='link' to='/'>
+                    <img src={Logo} alt="" />
+                </Link>
             </div>
             <div className="header-center-search">
                 <div className="header-center-search-input">

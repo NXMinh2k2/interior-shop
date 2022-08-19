@@ -99,28 +99,45 @@ const DetailProductPage = () => {
                     <div className='product-detail-bottom-img'><img src="https://img.cdn.vncdn.io/nvn/ncdn/store1/40111/store_1551669392_300.png" alt="" /></div>
                     <ul>
                         <li>
-                            <i class="fa-solid fa-award"></i>
-                            <span>Thương hiệu - dịch vụ Việt Nam phát triển bền vững do Chủ tịch nước trao tặng</span>
+                            <div className='des-wrap'>
+                                <i class="fa-solid fa-award"></i>
+                                <span>Thương hiệu - dịch vụ Việt Nam phát triển bền vững do Chủ tịch nước trao tặng</span>
+                            </div>
                         </li>
                         <li>
-                            <i class="fa-solid fa-thumbs-up"></i>
-                            <span>Là doanh nghiệp tiêu biểu trong lĩnh vực Kiến trúc- Nội thất</span>
+                            <div className='des-wrap'>
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                <span>Là doanh nghiệp tiêu biểu trong lĩnh vực Kiến trúc- Nội thất</span>
+                            </div>
+                            
                         </li>
                         <li>
-                            <i class="fa-solid fa-people-arrows"></i>
-                            <span>Đội ngũ kiến trúc sư giàu kinh nghiệm, xu hướng thiết kế hiện đại</span>
+                            <div className='des-wrap'>
+                                <i class="fa-solid fa-people-arrows"></i>
+                                <span>Đội ngũ kiến trúc sư giàu kinh nghiệm, xu hướng thiết kế hiện đại</span>
+                            </div>
+                           
                         </li>
                         <li>
-                            <i class="fa-solid fa-wrench"></i>
-                            <span>Chế độ bảo hành tại nhà, bảo trì vĩnh viễn tất cả sản phẩm</span>
+                            <div className='des-wrap'>
+                                <i class="fa-solid fa-wrench"></i>
+                                <span>Chế độ bảo hành tại nhà, bảo trì vĩnh viễn tất cả sản phẩm</span>
+                            </div>
+                           
                         </li>
                         <li>
-                            <i class="fa-solid fa-truck-fast"></i>
-                            <span>Vận chuyển miễn phí cho khu vụ nội thành hoặc 50km đầu</span>
+                            <div className='des-wrap'>
+                                <i class="fa-solid fa-truck-fast"></i>
+                                <span>Vận chuyển miễn phí cho khu vụ nội thành hoặc 50km đầu</span>
+                            </div>
+                            
                         </li>
                         <li>
-                            <i class="fa-solid fa-hand-holding-dollar"></i>
-                            <span>Kiểm tra hàng, thanh toán tại nhà khi nhận hàng</span>
+                            <div className='des-wrap'>
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                                <span>Kiểm tra hàng, thanh toán tại nhà khi nhận hàng</span>
+                            </div>
+                            
                         </li>
                     </ul>
                 </div>

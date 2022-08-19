@@ -21,6 +21,10 @@
                 span {
                     color: #000;
                     padding: 0 10px;
+
+                    @include mobile {
+                        font-size: 14px !important;
+                    }
                                         
                     &:first-child {
                         border-right: 1px solid #000;
@@ -49,11 +53,21 @@
                 align-items: center;
                 justify-content: space-between;
 
+                @include mobile {
+                    width: 100% !important;
+                    flex-direction: column;
+                }
+
                 .search {
                     width: 380px;
                     height: 50px;
                     background-color: #fff;
                     padding: 10px;
+                    
+                    @include mobile {
+                        width: 100% !important;
+                        margin-bottom: 20px;
+                    }
 
                     input {
                         width: 90%;
@@ -74,6 +88,10 @@
                     width: 420px;
                     height: 50px;
 
+                    @include mobile {
+                        width: 100% !important;
+                    }
+
                     .sort-wrap {
                         display: flex;
                         align-items: center;
@@ -83,6 +101,10 @@
                         span {
                             font-size: 20px;
                             margin-right: 10px;
+
+                            @include mobile {
+                                display: none;
+                            }
                         }
 
                         select {
@@ -93,6 +115,11 @@
                             font-size: 18px;
                             border: none;
                             outline: none;
+
+                            @include mobile {
+                                width: 100% !important;
+                                margin-left: 0 !important;
+                            }
                     }
 
                     }
@@ -116,6 +143,10 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+                @include mobile {
+                    justify-content: center;
+                }
             
                 .products-text {
                     font-size: 24px;
@@ -129,6 +160,13 @@
                 grid-template-columns: repeat(4, 1fr);
                 grid-column-gap: 36px;
                 grid-row-gap: 36px;
+
+                @include mobile {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-column-gap: 28px;
+                    grid-row-gap: 28px;
+                }
             }
         }
 

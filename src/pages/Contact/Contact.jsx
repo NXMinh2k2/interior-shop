@@ -14,13 +14,13 @@ const Contact = () => {
                     <span>Liên hệ</span>
             </div>
             <div className="contact-content">
-            <Map 
-              googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`}
-              loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `20vh`, margin: `auto`, border: '2px solid black' }} />}
-              mapElement={<div style={{ height: `100%` }} />}
-            />
-            <Mail />
+              <Map 
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`}
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={<div style={{ height: `20vh`, margin: `auto`, border: '2px solid black' }} />}
+                mapElement={<div style={{ height: `100%` }} />}
+              />
+              <Mail />
             </div>
         </div>
     </div>

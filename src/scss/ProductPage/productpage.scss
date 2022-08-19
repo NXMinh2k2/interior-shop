@@ -36,82 +36,114 @@
 
                 }
             }
+        }
 
-            .product-page {
-                width: 100%;
-                display: flex;
-    
-                .product-page-left {
-                    width: 70%;
+        .product-page {
+            width: 100%;
+            display: flex;
 
-                    .product-page-wrap {
-                        margin: 50px 0;
-                        
-                        
-                        h1 {
-                            font-weight: 400;
-                            margin-bottom: 10px;
-                            padding-bottom: 10px;
-                            border-bottom: 1px solid #ccc;
-                        }
-                        
-                        span {
-                            color: rgb(215,196,162);
-                            font-size: 18px;
-                            margin-top: 20px;
-                            padding: 8px 0;
-                        }
+            @include mobile {
+                flex-direction: column;
+            }
 
-                        .span {
-                            display: block;
-                            text-align: center;
-                            font-size: 18px;
+            .product-page-left {
+                width: 70%;
+
+                @include mobile {
+                    width: 100%;
+                }
+
+                .product-page-wrap {
+                    margin: 50px 0;
+
+                    h1 {
+                        @include mobile {
+                            font-size: 24px;
                             font-weight: 500;
-                            color: #000;
-                        }
-
-                        p {
-                            font-size: 18px;
-                            padding: 8px 0;
                             line-height: 1.6;
                         }
+                    }
 
-                        img {
+                    img {
+                        @include mobile {
                             width: 100%;
                         }
                     }
+
+                    p {
+                        font-size: 20px;
+                        margin-top: 16px;
+                        
+                        @include mobile {
+                            font-size: 18px;
+                            line-height: 1.8;
+                        }
+                    }
+
+                    .product-page-order {
+                        padding-bottom: 10px ;
+                        margin-bottom: 20px;
+                        text-transform: uppercase;
+                        border-bottom: 1px solid #000;
+                    }
+
+                    .product-page-img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .product-page-right {
+                width: 30%;
+
+                @include mobile {
+                    width: 100%;
                 }
 
-                .product-page-right {
-                    width: 30%;
+                .product-page-relation {
+                    margin-top: 50px;
+                    margin-left: 80px;
 
-                    .product-page-relation {
-                        margin-top: 50px;
-                        margin-left: 80px;
+                    @include mobile {
+                        margin-left: 0;
+                    }
 
-                        p {
-                            font-size: 24px;
-                            padding-bottom: 4px ;
-                            margin-bottom: 20px;
-                            text-transform: uppercase;
-                            border-bottom: 1px solid #000;
+                    p {
+                        font-size: 24px;
+                        padding-bottom: 4px ;
+                        margin-bottom: 20px;
+                        text-transform: uppercase;
+                        border-bottom: 1px solid #000;
+
+                        @include mobile {
+                            text-align: center;
+                            font-size: 20px;
                         }
-    
-                        ul {
-                            list-style: none;
-    
-                            li {
-                                font-size: 24px;
-                                font-weight: 300;
-                                margin-bottom: 20px;
-                                line-height: 1.5;
-                                color: #333;
-                                cursor: pointer;
-    
-                                &:hover {
-                                    text-decoration: underline;
-                                    opacity: 0.6;
-                                }
+                    }
+
+                    ul {
+                        list-style: none;
+                        
+                        @include mobile {
+                            margin-bottom: 40px;
+                        }
+
+                        li {
+                            font-size: 24px;
+                            font-weight: 300;
+                            margin-bottom: 20px;
+                            line-height: 1.5;
+                            color: #333;
+                            cursor: pointer;
+
+                            &:hover {
+                                text-decoration: underline;
+                                opacity: 0.6;
+                            }
+
+                            @include mobile {
+                                font-size: 20px;
+                                line-height: 1.6;
                             }
                         }
                     }

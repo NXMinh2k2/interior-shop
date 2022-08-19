@@ -46,10 +46,10 @@ const CartProductPage = () => {
                 <div className='title'>Giỏ hàng</div>
                 <table>
                   <tr>
-                      <th className='product'>Sản phẩm</th>
-                      <th className='quantity'>Số lượng</th>
-                      <th className='unit-price'>Đơn giá</th>
-                      <th className='price'>Thành tiền</th>
+                    <th className='product'>Sản phẩm</th>
+                    <th className='quantity'>Số lượng</th>
+                    <th className='unit-price'>Đơn giá</th>
+                    <th className='price'>Thành tiền</th>
                   </tr>
                     {
                       products && products.map(product => {
@@ -74,8 +74,8 @@ const CartProductPage = () => {
                                   <span ><i class="fa-solid fa-plus" onClick={() => increaseProduct(product)} ></i></span>
                               </div>
                             </th>
-                            <th>{product.price} VNĐ</th>
-                            <th>{product.totalPrice}.000.000VNĐ</th>
+                            <th className='th-price'>{product.price} VNĐ</th>
+                            <th >{product.totalPrice}.000.000VNĐ</th>
                           </tr>
                         )
                       })

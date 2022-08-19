@@ -6,7 +6,7 @@
     justify-content: center;
 
     .products-wrap {
-        width: 80%;
+        width: 90%;
         height: 100%;
 
         .products-wrap-top {
@@ -41,9 +41,17 @@
                 width: 100%;
                 display: flex;
                 margin-top: 20px;
+                
+                @include mobile {
+                    flex-direction: column;
+                }
 
                 .product-detail-left {
                     width: 50%;
+
+                    @include mobile {
+                        width: 100%;
+                    }
 
                     .product-detail-img {
                         width: 100%;
@@ -52,16 +60,30 @@
                             width: 100%;
                             height: 548px;
                             object-fit: cover;
+
+                            @include mobile {
+                                height: 280px;
+                            }
                         }
                     }
                 }
 
                 .product-detail-right {
                     width: 50%;
+                    margin-top: 10px;
+
+                    @include mobile {
+                        width: 100%;
+                        text-align: center;
+                    }
 
                     .product-detail-name {
                         font-size: 24px;
                         margin-left: 50px;
+
+                        @include mobile {
+                            margin-left: 0;
+                        }
                     }
 
                     .product-detail-code {
@@ -70,6 +92,11 @@
                         margin-top: 10px;
                         padding-bottom: 10px;
                         border-bottom: 1px solid #000;
+
+                        @include mobile {
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
                     }
 
                     .product-detail-price {
@@ -78,6 +105,11 @@
                         margin-left: 200px;
                         font-size: 50px;
                         color: #9e2334;
+
+                        @include mobile {
+                            font-size: 32px;
+                            margin-left: 0;
+                        }
                     }
 
                     .product-detail-old-price {
@@ -85,6 +117,10 @@
                         margin-left: 264px;
                         font-size: 20px;
                         text-decoration: line-through;
+
+                        @include mobile {
+                            margin: 0;
+                        }
                         
                     }
 
@@ -94,16 +130,24 @@
                         margin-left: 50px;
                         border-top: 1px solid #ccc;
                         padding-top: 20px;
+
+                        @include mobile {
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
                     }
 
                     .product-detail-quantity {
-                        margin: 20px 0 30px 0;
-                        margin-left: 50px;
+                        margin: 20px 0 30px 50px;
                         display: flex;
                         width: 180px;
                         height: 48px;
                         border: 1px solid #000;
                         border-radius: 4px;
+
+                        @include mobile {
+                            margin: 20px auto 30px;
+                        }
 
                         span {
                             display: flex;
@@ -149,14 +193,31 @@
                             cursor: pointer;
                         }
 
+                        @include mobile {
+                            margin-left: 0px;
+                            font-size: 18px;
+                            margin: 20px auto;
+                            padding: 12px;
+                        }
+
                         span {
+                            font-size: 24px;
                             font-weight: 500;
                             margin-left: 230px;
                             text-transform: uppercase;
+
+                            @include mobile {
+                                margin-left: 56px;
+                                font-size: 18px;
+                            }
                         }
 
                         i {
                             font-size: 24px;
+
+                            @include mobile {
+                                font-size: 18px;
+                            }
                         }
                     }
 
@@ -164,10 +225,19 @@
                         display: flex;
                         margin-top: 24px;
                         margin-left: 50px;
+
+                        @include mobile {
+                            margin-left: 0;
+                            justify-content: center;
+                        }
             
                         i {
                             color: #fff;
                             font-size: 24px;
+
+                            @include mobile {
+                                font-size: 20px;
+                            }
                         }
                         
                         div {
@@ -182,21 +252,41 @@
                             width: 44px;
                             height: 44px;
                             background-color: #3b5998;
+
+                            @include mobile {
+                                width: 36px;
+                                height: 36px;
+                            }
                         }
                         .social-twitter {
                             width: 44px;
                             height: 44px;
                             background-color: #1da1f2;
+
+                            @include mobile {
+                                width: 36px;
+                                height: 36px;
+                            }
                         }
                         .social-pinterest {
                             width: 44px;
                             height: 44px;
                             background-color: #d02128;
+
+                            @include mobile {
+                                width: 36px;
+                                height: 36px;
+                            }
                         }
                         .social-tumblr {
                             width: 44px;
                             height: 44px;
                             background-color: #001935;
+
+                            @include mobile {
+                                width: 36px;
+                                height: 36px;
+                            }
                         }
             
                     }
@@ -236,14 +326,36 @@
                     flex-direction: column;
                     padding: 20px 400px;
 
+                    @include mobile {
+                        padding: 20px 10px;
+                    }
+
                     li {
                         margin: 20px 0;
-                        font-size: 18px;
                         font-weight: 300;
+
+                        .des-wrap {
+                            display: flex;
+                            align-items: center;
+                        }
+                        
+                         span {
+                            font-size: 18px;
+
+                            @include mobile {
+                                font-size: 15px;
+                                font-weight: 500;
+                                line-height: 1.6;
+                             }
+                        }
 
                         i {
                             margin-right: 20px;
                             font-size: 28px;
+                            
+                            @include mobile {
+                                font-size: 24px;;
+                            }
                         }
                     }
                 }
@@ -269,6 +381,12 @@
                     grid-template-columns: repeat(4, 1fr);
                     grid-column-gap: 36px;
                     grid-row-gap: 36px;
+
+                    @include mobile {
+                        grid-template-columns: 1fr;
+                        grid-column-gap: 28px;
+                        grid-row-gap: 28px;
+                    }
                 }
             }
         }

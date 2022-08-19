@@ -21,6 +21,7 @@ const CheckoutPage = () => {
             <div className="checkout-left">
               <div className='checkout-product'>
                 <div className='title'>Giỏ hàng (2)</div>
+                <div className='product-wrap'>
                 {
                   products.map(product => {
                     return (
@@ -34,6 +35,9 @@ const CheckoutPage = () => {
                           <p>Tình trạng: <span>Còn hàng</span></p>
                           <p>Giá thành: {product.price}</p>
                           <p>Số lượng: {product.quantity}</p>
+                          <div className="product-btn-small" onClick={() => removeProduct(product)}>
+                            <button>Xóa</button>
+                          </div>
                         </div>
                         <div className="product-btn" onClick={() => removeProduct(product)}>
                           <button>Xóa</button>
@@ -42,6 +46,7 @@ const CheckoutPage = () => {
                     )
                   }) 
                 }
+                </div>
               </div>
               <Link className='link' to='/'><button className='checkout-btn'>Tiếp tục mua hàng</button></Link>
               <div className='checkout-info'>

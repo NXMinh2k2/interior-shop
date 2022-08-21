@@ -162,6 +162,24 @@
                     grid-row-gap: 28px;
                 }
             }
+
+            .page-list {
+                margin-top: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                list-style: none;
+                font-size: 18px;
+
+                .page-item {
+                    cursor: pointer;
+                    padding: 0 40px;
+
+                    &:hover {
+                        color: #ccc;
+                    }
+                }
+            }
         }
     }
 }

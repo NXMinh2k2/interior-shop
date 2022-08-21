@@ -3,6 +3,7 @@ import CartProduct from '../../components/CartProduct'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import '../../scss/index.scss'
+import Pagination from '../../components/Pagination'
 
 const DinningTablePage = () => {
 
@@ -15,7 +16,7 @@ const DinningTablePage = () => {
             const res = await axios.get("http://localhost:3001/products")
             const data = res.data
 
-            const newProducts = data.filter(x => x.code.includes("BA"))
+            const newProducts = data.filter(x => x.code.includes("BANAN"))
             setDinningTableProducts(newProducts)
         }
         fetchData()

@@ -105,12 +105,21 @@ const Header = () => {
         </div>
 
         {/*End   mobile-menu*/}
-        <div className="header-top">
+        <div className="header-top header-mobile">
             <div className="header-top-text">
                 <span>THÁNG BÁN SOFA KHÔNG LÃI SUẤT - ƯU ĐÃ TỚI 4.500.000 Đ</span>
             </div>
             <ul className="header-top-list">
-                <li>{currentUser && location.pathname == '/' ? currentUser.email : ''}</li>
+                <li className="header-top-item">
+                    {currentUser && location.pathname == '/' 
+                        ?   
+                        <div className='account'>
+                            <img src="https://scontent.fhan5-11.fna.fbcdn.net/v/t39.30808-6/252927771_1026564704808760_274793464810513665_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=l8C6PUcGJYUAX80EEzD&_nc_ht=scontent.fhan5-11.fna&oh=00_AT_xCbAwGypaE1qE96K1LYdJdfI3pT8mOU3WIh7FceTV0Q&oe=63057681" alt="" />
+                            <h1>{currentUser.email}</h1>
+                        </div>
+                        : ''
+                    }
+                </li>
                 <Link className='link' to='/'><li className="header-top-item">Trang chủ</li></Link>
                 {/* <Link className='link' to='/'><li className="header-top-item">Giới thiệu</li></Link> */}
                 <Link className='link' to='/contact'><li className="header-top-item">Liên hệ</li></Link>

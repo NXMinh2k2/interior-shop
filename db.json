@@ -346,7 +346,7 @@
     {
         "id": 38,
         "name": "BÀN ĂN GỖ CAO CẤP BA01",
-        "code": "BA01",
+        "code": "BANAN01",
         "price": "15.000.000",
         "img": "https://img.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/ban_an_cao_cap_go_tu_nhien_1000x667.jpg",
         "place": "phongbep"
@@ -354,7 +354,7 @@
     {
         "id": 39,
         "name": "BÀN ĂN HIỆN ĐẠI BA02",
-        "code": "BA02",
+        "code": "BANAN02",
         "price": "13.000.000",
         "img": "https://img.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/1_thumb_600x400.jpg",
         "place": "phongbep"
@@ -362,7 +362,7 @@
     {
         "id": 40,
         "name": "BÀN ĂN GỖ BA03",
-        "code": "BA03",
+        "code": "BANAN03",
         "price": "19.000.000",
         "img": "https://img.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/3_1_thumb_600x400.jpg",
         "place": "phongbep"
@@ -370,7 +370,7 @@
     {
         "id": 41,
         "name": "BÀN ĂN GỖ ĐẸP BA04",
-        "code": "BA04",
+        "code": "BANAN04",
         "price": "12.000.000",
         "img": "https://img.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/untitled_2_thumb_600x400.jpg",
         "place": "phongbep"
@@ -378,7 +378,7 @@
     {
         "id": 42,
         "name": "BÀN ĂN GỖ CÓ NỆM BA05",
-        "code": "BA05",
+        "code": "BANAN05",
         "price": "22.000.000",
         "img": "https://img.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/untitled_2_1_thumb_600x400.jpg   ",
         "place": "phongbep"
@@ -386,7 +386,7 @@
     {
         "id": 43,
         "name": "BÀN ĂN GỖ HIỆN ĐẠI BA06",
-        "code": "BA06",
+        "code": "BANAN06",
         "price": "11.000.000",
         "img": "https://img.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/2_2_1000x667.jpg",
         "place": "phongbep"
@@ -394,15 +394,15 @@
     {
         "id": 44,
         "name": "BÀN ĂN ĐẸP BA09",
-        "code": "BA09",
+        "code": "BANAN09",
         "price": "10.000.000",
         "img": "https://img.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/ba08_ban_an_mat_da_ghe_boc_da_1_thumb_600x400.jpg",
         "place": "phongbep"
     },
     {
         "id": 45,
-        "name": "BÀN ĂN ĐẸP BA10",
-        "code": "BA10",
+        "name": "BÀN ĂN ĐẸP BA10", 
+        "code": "BANAN10",
         "price": "13.000.000",
         "img": "https://img.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/ba10_ban_an_mat_da_ghe_boc_da_co_vai_6_thumb_600x400.jpg",
         "place": "phongbep"
@@ -410,7 +410,7 @@
     {
         "id": 46,
         "name": "BÀN ĂN GỖ ĐẸP BA12",
-        "code": "BA12",
+        "code": "BANAN12",
         "price": "12.000.000",
         "img": "https://img.cdn.vncdn.io/nvn/ncdn/store1/40111/ps/20190102/ba11_ban_an_mat_da_ghe_boc_da_co_vai_go_11_thumb_600x400.jpg",
         "place": "phongbep"

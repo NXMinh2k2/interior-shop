@@ -3,12 +3,15 @@ import CartProduct from '../../components/CartProduct'
 import axios from 'axios'
 import {Link, Outlet} from 'react-router-dom'
 import '../../scss/index.scss'
+import Pagination from '../../components/Pagination'
 
 const BedRoomPage = () => {
 
     const [bedRoomProducts, setBedRoomProducts] = useState([])
     const [searchProducts, setSearchProducts] = useState("")
     const [value, setValue] = useState('1')
+    const [currentPage, setCurrentPage] = useState(1)
+    const [productsPerPage, setProductsPerPage] = useState(8)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -53,6 +56,14 @@ const BedRoomPage = () => {
                 break;
         }
     }, [value])
+    
+    const indexOfLastProduct = currentPage * productsPerPage
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage
+    const currentProducts = bedRoomProducts.slice(indexOfFirstProduct, indexOfLastProduct)
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber)
+    }
 
   return (
     <>
@@ -94,7 +105,7 @@ const BedRoomPage = () => {
                     <div className='underline'></div>
                     <div className='cart-product-wrap'>
                         {
-                            bedRoomProducts.filter(product => {
+                            currentProducts.filter(product => {
                                 if(searchProducts == "") {
                                     return product
                                 } else if (product.name.toLowerCase().includes(searchProducts.toLocaleLowerCase())) {
@@ -118,6 +129,11 @@ const BedRoomPage = () => {
                             })
                         }
                     </div>
+                    <Pagination
+                        productsPerPage={productsPerPage} 
+                        totalProducts={bedRoomProducts.length}
+                        paginate={paginate}
+                    />
                 </div>
             </div>
         </div>

@@ -6,8 +6,12 @@
     justify-content: center;
 
     .products-wrap {
-        width: 90%;
+        width: 80%;
         height: 100%;
+
+        @include mobile {
+            width: 90%;
+        }
 
         .products-wrap-top {
             width: 100%;

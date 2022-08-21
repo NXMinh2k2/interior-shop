@@ -236,4 +236,41 @@
             }
         }
     }
+
+    .scrollTop {
+        position: fixed;
+        bottom: 100px;
+        right: 50px;
+        width:  60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        @include mobile {
+            right: 10px;
+            width:  32px;
+            height: 32px;
+        }
+
+        i {
+            font-size: 22px;
+            animation: slide 0.8s alternate infinite;
+
+            @include mobile {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateY(5px);
+    } to {
+        transform: translateY(-5px);
+    }
 }

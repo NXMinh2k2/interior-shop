@@ -3,12 +3,14 @@ import CartProduct from '../../components/CartProduct'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import '../../scss/index.scss'
+import Pagination from '../../components/Pagination'
 
 const BedPage = () => {
 
     const [bedProducts, setBedProducts] = useState([])
     const [searchProducts, setSearchProducts] = useState("")
     const [value, setValue] = useState('1')
+   
 
     useEffect(() => {
         const fetchData = async () => {
@@ -53,6 +55,8 @@ const BedPage = () => {
                 break;
         }
     }, [value])
+
+    
 
   return (
     <div className="content">

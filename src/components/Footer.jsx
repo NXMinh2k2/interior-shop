@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../scss/index.scss'
 
 const Footer = () => {
+  const [scroll, setScroll] = useState(false)
+
+  const handleChangeHeader = () => {
+    const scrollY = window.scrollY
+    if(scrollY > 500) {
+      setScroll(true)
+    } else {
+      setScroll(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleChangeHeader)
+
+    return () => {
+        window.removeEventListener('scroll', handleChangeHeader)
+    }
+}, [])
+
+  const handleScrollTop = () => {
+    window.scrollTo({top : '0', behavior: 'smooth'})
+  }
+
   return (
     <div className='footer'>
       <div className="footer-container">
@@ -83,6 +106,12 @@ const Footer = () => {
         <span className='hotline'>Hotline: </span>
         <span className='phone'>19002812</span>
       </div>
+
+     {
+      scroll ?  <div className='scrollTop' onClick={handleScrollTop}>
+      <i class="fa-solid fa-arrow-up-long"></i>
+    </div> : ''
+     }
     </div>
   )
 }
